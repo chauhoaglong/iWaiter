@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
-        android:text="user"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:id="@+id/user_phone"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điện thoại: " />
+    <TextView
+        android:id="@+id/user_address"
+        android:layout_above="@id/user_phone"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ: " />
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_above="@id/user_address"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ tên: " />
+    <TextView
+        android:id="@+id/user_bank"
+        android:layout_below="@+id/user_phone"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số tài khoản: " />
+
+    <TextView
+        android:id="@+id/user_phone_value"
+        android:layout_toRightOf="@id/user_phone"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01234567890" />
+    <TextView
+        android:id="@+id/user_address_value"
+        android:layout_toRightOf="@id/user_address"
+        android:layout_above="@id/user_phone_value"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xx đuòng gì đó" />
+    <TextView
+        android:id="@+id/user_name_value"
+        android:layout_toRightOf="@id/user_name"
+        android:layout_above="@id/user_address_value"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ Văn Tên" />
+    <TextView
+        android:id="@+id/user_bank_value"
+        android:layout_toRightOf="@id/user_bank"
+        android:layout_below="@id/user_phone_value"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textSize="13pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000000000" />
+</RelativeLayout>

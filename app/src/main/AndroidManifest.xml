@@ -3,6 +3,8 @@
     package="vn.thientf.iwaiter">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -22,9 +24,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".Main2Activity">
+        <activity android:name=".Main2Activity"></activity>
 
-        </activity>
+        <meta-data
+            android:name="com.google.android.gms.vision.DEFENDENCIES"
+            android:value="barcode" />
+
+        <activity android:name=".StartActivity"></activity>
     </application>
 
 </manifest>

@@ -31,6 +31,7 @@ import vn.thientf.iwaiter.Fragment.FragmentUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final int REQUEST_SCAN = 1111;
     String headerTitle;
     FirebaseAuth firebaseAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -110,7 +111,8 @@ public class MainActivity extends AppCompatActivity
 
             //save resId & tableId to GlobalData
             //this will change fragment depend on the existing of resId in Database
-            checkRestaurantId(GlobalData.getInstance().getCurrRes());
+            startActivityForResult(new Intent(getApplicationContext(),StartActivity.class),REQUEST_SCAN);
+       //     checkRestaurantId(GlobalData.getInstance().getCurrRes());
         } else if (id == R.id.nav_menu) {
             FragmentMenu fragmentMenu = new FragmentMenu();
             replaceFragment(fragmentMenu);
@@ -120,7 +122,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_history) {
 
         } else if (id == R.id.nav_info) {
-
+             FragmentUser fragmentUser = new FragmentUser();
+             replaceFragment(fragmentUser);
+             changeTitle("Info");
         } else if (id == R.id.nav_signout) {
             FirebaseAuth.getInstance().signOut();
         }
@@ -178,4 +182,13 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    //    if (requestCode==REQUEST_SCAN && requestCode==RESULT_OK){
+            String qrcode = data.getStringExtra("result");
+            Toast.makeText(this, qrcode,
+                    Toast.LENGTH_LONG).show();
+    //    }
+    }
 }

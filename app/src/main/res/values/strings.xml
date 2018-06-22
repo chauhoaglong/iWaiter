@@ -15,4 +15,8 @@
     <string name="danh_muc">Categories</string>
     <string name="RestaurantsRef">restaurants</string>
     <string name="Menu">Menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="result_text_default">scan qr code</string>
 </resources>
